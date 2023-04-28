@@ -37,7 +37,7 @@ public class EmployeeManager implements HMCDBCRUD {
     */
     public ArrayList<Employee> listTableRows() throws SQLException {
         // execute sql select statement 
-        rs = executeDBSQL(empSeSQL, conn);
+        rs = executeQuerySQL(empSeSQL, conn);
         ArrayList<Employee> listOfEmployees = new ArrayList<>();
         while(rs.next()) {
             Integer empno       = rs.getInt("empno");
@@ -82,13 +82,15 @@ public class EmployeeManager implements HMCDBCRUD {
      * @param obj
      * @throws SQLException
      */
-
-    @Override
-    public void alterTableRow(Object obj) throws SQLException {
-    }
-
+    
     @Override
     public void setConnection(Connection conn) throws SQLException {
       this.conn = conn;
     }
+
+    @Override
+    public void updateTableRow(Object obj, Integer colno) throws SQLException {
+   
+    }
 } 
+

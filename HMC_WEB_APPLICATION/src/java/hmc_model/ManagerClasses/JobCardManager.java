@@ -72,12 +72,12 @@ public class JobCardManager implements HMCDBCRUD{
     }
 
     @Override
-    public void alterTableRow(Object obj) throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void setConnection(Connection conn) throws SQLException {
+        this.conn = conn;
     }
 
     @Override
-    public void setConnection(Connection conn) throws SQLException {
-        this.conn = conn;
+    public void updateTableRow(Object obj, Integer colno) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

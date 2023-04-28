@@ -19,12 +19,12 @@ import java.util.ArrayList;
 public class InvItemsManager implements HMCDBCRUD {
     private final String invItemsSelectSQL = "SELECT * FROM employee ;";
     private final String invItemsInsertSQL = "INSERT INTO TABLE inventory VALUES(?,?,?);";
-    private InvItems invItem;
-    private Sale sale;
-    private Employee salesman;
-    private Inventory pid;
-    private PreparedStatement ps            = null;
-    private ResultSet rs                    = null; 
+    private InvItems invItem= null;
+    private Sale sale = null;
+    private Employee salesman = null;
+    private Inventory pid = null;
+    private PreparedStatement ps = null;
+    private ResultSet rs = null; 
     private Connection conn;
      
      
@@ -75,11 +75,12 @@ public class InvItemsManager implements HMCDBCRUD {
     }
 
     @Override
-    public void updateTableRow(Object obj) throws SQLException {
+    public void setConnection(Connection conn) throws SQLException {
+        this.conn = conn;
     }
 
     @Override
-    public void setConnection(Connection conn) throws SQLException {
-        this.conn = conn;
+    public void updateTableRow(Object obj, Integer colno) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 } // END InvItemManager

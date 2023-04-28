@@ -20,6 +20,7 @@ import java.util.ArrayList;
  */
 public class InventoryManager implements HMCDBCRUD{
     private String saleSelectSQL;
+    private String invtSeSQL;
     private Connection conn;
     private Inventory inventory;
     private Employee emp;
@@ -48,14 +49,10 @@ public class InventoryManager implements HMCDBCRUD{
           
     }
 
-    @Override
-    public void alterTableRow(Object obj) throws SQLException {
-    
-    }
     
     @Override
     public ArrayList<Inventory> listTableRows() throws SQLException {
-          rs = executeDBSQL(invtSeSQL, conn);
+          rs = executeQuerySQL(invtSeSQL, conn);
           ArrayList<Inventory> listInventory = new ArrayList<>();
           while (rs.next()) {
                 // obtain a column from the results set
@@ -84,5 +81,10 @@ public class InventoryManager implements HMCDBCRUD{
                 listInventory.add(inventory);
           }
           return listInventory;     
+    }
+
+    @Override
+    public void updateTableRow(Object obj, Integer colno) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

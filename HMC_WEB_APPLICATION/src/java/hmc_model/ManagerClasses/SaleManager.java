@@ -21,6 +21,8 @@ public class SaleManager implements HMCDBCRUD{
     private String saleSelectSQL;
     private Connection conn;
     private Sale sale;
+    private PreparedStatement ps;
+    private ResultSet rs;
     private Employee emp;
 
     public SaleManager() {
@@ -34,7 +36,7 @@ public class SaleManager implements HMCDBCRUD{
 
     @Override
     public ArrayList<?> listTableRows() throws SQLException {
-          rs = executeDBSQL(this.saleSelectSQL, this.conn)
+          rs = executeQuerySQL(this.saleSelectSQL, this.conn);
           ArrayList<Sale> listSale = new ArrayList<>();
           while (rs.next()) {
                 Integer invno   = rs.getInt("invno");
@@ -62,7 +64,7 @@ public class SaleManager implements HMCDBCRUD{
     }
 
     @Override
-    public void alterTableRow(Object obj) throws SQLException {
-   
-    }   
+    public void updateTableRow(Object obj, Integer colno) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }

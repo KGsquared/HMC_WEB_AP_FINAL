@@ -60,7 +60,7 @@ public class LocationManager implements HMCDBCRUD {
     }
 
     @Override
-    public void alterTableRow(Object obj) throws SQLException {
+    public void updateTableRow(Object obj, Integer colno) throws SQLException {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

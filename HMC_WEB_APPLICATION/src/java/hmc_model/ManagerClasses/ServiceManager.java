@@ -50,9 +50,9 @@ public class ServiceManager implements HMCDBCRUD{
     public void insertTableRow(Object obj) throws SQLException {
         
     }
-
+  
     @Override
-    public void alterTableRow(Object obj) throws SQLException {
-    
-    }    
+    public void updateTableRow(Object obj, Integer colno) throws SQLException {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
