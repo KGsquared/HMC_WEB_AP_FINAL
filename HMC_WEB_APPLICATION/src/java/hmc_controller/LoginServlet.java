@@ -32,15 +32,16 @@ public class LoginServlet extends HttpServlet {
     private LoginManager loginmanager;
     private ServiceManager serviceManager;
     private ArrayList<Service> servList;
+    private Login ulogin;
+    
 
     public LoginServlet() {
         loginmanager = new LoginManager();
         serviceManager = new ServiceManager();
-        ArrayList<Service> servList = new ArrayList<>();
+        servList = new ArrayList<>();
+        ulogin = new Login();
     }
    
-    
-            
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         // current session of the user logged on
@@ -51,7 +52,7 @@ public class LoginServlet extends HttpServlet {
         String password = session.getAttribute("password").toString();
         
         // enscapulation of the class members 
-        Login ulogin = new Login();
+   
         ulogin.setUsername(username);
         ulogin.setPassword(password);
         
