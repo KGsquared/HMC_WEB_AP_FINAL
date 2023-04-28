@@ -4,11 +4,13 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.servlet.*;
+import javax.servlet.annotation.WebListener;
 
 /**
  *
  * @author k_gsquared
  */
+@WebListener
 public class DBServletContextListener implements ServletContextListener {
 
     private Connection conn = null;

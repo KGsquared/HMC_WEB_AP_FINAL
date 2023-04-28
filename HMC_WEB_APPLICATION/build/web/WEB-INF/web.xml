@@ -11,11 +11,12 @@
     </session-config>
     
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
+        <welcome-file>/index.html</welcome-file>
     </welcome-file-list>
     
     <context-param>
         <param-name>db</param-name>
         <param-value>jdbc:sqlite:C:\\Users\\user\\Documents\\SQLite\\HMC_RECORDS</param-value>
-    </context-param>  
+    </context-param> 
+     
 </web-app>
